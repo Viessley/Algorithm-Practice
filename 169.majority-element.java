@@ -23,7 +23,7 @@ class Solution { // 114 ms Runtime.
     }
 }
 
-class Solution1 { // 114 ms Runtime. 
+class Solution1 { // 1 ms Runtime. 
     public int majorityElement(int[] nums) {
         int i;
         int majorityElement = nums[0];
