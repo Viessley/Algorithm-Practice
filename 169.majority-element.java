@@ -25,7 +25,24 @@ class Solution { // 114 ms Runtime.
 
 class Solution1 { // 114 ms Runtime. 
     public int majorityElement(int[] nums) {
-        
+        int i;
+        int majorityElement = nums[0];
+        int count = 1;
+
+        for(i = 1; i < nums.length; i++){
+            if(count == 0){
+                majorityElement = nums[i];
+                count++;
+            }
+            
+            else if(nums[i] == majorityElement){
+                count++;
+            }
+            else{
+                count--;
+            }
+        }
+        return majorityElement;
     }
 }
 // @lc code=end
