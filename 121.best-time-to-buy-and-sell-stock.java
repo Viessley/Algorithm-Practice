@@ -7,12 +7,13 @@
 // @lc code=start
 class Solution {
     public int maxProfit(int[] prices) {
+
         int lowestBuy = Integer.MAX_VALUE;
         int maxProfit = 0;
 
-        for(int nextPrice: prices){
-            lowestBuy = Math.min(lowestBuy, nextPrice);
-            maxProfit = Math.max(maxProfit, nextPrice - lowestBuy);
+        for(int next : prices){
+            lowestBuy = Math.min(lowestBuy, next);
+            maxProfit = Math.max(maxProfit, next - lowestBuy);
         }
         return maxProfit;
     }

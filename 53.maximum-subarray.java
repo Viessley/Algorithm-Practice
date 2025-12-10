@@ -7,15 +7,16 @@
 // @lc code=start
 class Solution {
     public int maxSubArray(int[] nums) {
-        int maxSum = nums[0];
         int currentSum = nums[0];
-
-        for (int i = 1; i < nums.length; i++){
+        int historyMaxSum = nums[0];
+        
+        for(int i = 1; i < nums.length; i++){
             currentSum = Math.max(nums[i], currentSum + nums[i]);
-            maxSum = Math.max(maxSum, currentSum);
+            historyMaxSum = Math.max(currentSum, historyMaxSum);
         }
-        return maxSum;
+
+        return historyMaxSum;        
     }
 }
 // @lc code=end
-//[-1,0,8,-4,5,-2.10,3,-5]
+

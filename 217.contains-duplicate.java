@@ -6,38 +6,20 @@
 
 // @lc code=start
 
-Import java.util.HashMap;
-Import java.util.Set;
-
+import java.util.HashSet;
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        HashMap<Integer, Inteager> map = new HashMap<>();
 
-        for(int c : nums){
-            map.put(c, map.getOrDefault(c, 0)+1);
-        }
-
-        for(int count : map.values()){
-            if(count >=2){
-                return ture;
-            }
-        }
-        return false;
-    }
-}
-
-class Solution1 {
-    public boolean containsDuplicate(int[] nums) {
         HashSet<Integer> set = new HashSet<>();
-        for(int c :nums){
-            if(set.contains(c)){
+        for (int next : nums){
+            if(set.contains(next)){
                 return true;
             }
-            set.add(c);
+            set.add(next);
         }
+
         return false;
     }
 }
-
 // @lc code=end
 
